@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobRinger Blogs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      color: #0d47a1;
+    }
+
+    .logo span {
+      color: #333;
+    }
+
+    .header nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .header .buttons button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .header .buttons .employer {
+      background-color: #ffc107;
+      border: none;
+    }
+
+    .alert {
+      background-color: #e7fbe7;
+      color: green;
+      padding: 10px 30px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .content {
+      display: flex;
+      padding: 30px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .blogs {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .blog-card {
+      background-color: white;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-card-content {
+      padding: 15px;
+    }
+
+    .blog-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .blog-meta {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .share {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .share a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    .sidebar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar-box {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .sidebar-box h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background-color: #f0f0f0;
+      padding: 5px 10px;
+      font-size: 13px;
+      border-radius: 4px;
+      color: #0d47a1;
+      cursor: pointer;
+    }
+
+    .search-icon {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <!-- <div class="logo">job<span>Ringer</span> <span style="color:#0d47a1;">Blogs</span></div>
+    <nav>
+      <a href="index.html">Jobs</a>
+      <a href="active.html">Active Employers</a>
+      <a href="bloging.html">Job Blogs</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+    <div class="buttons">
+      <button>Jobseeker Login</button>
+      <button class="employer">Employer Login</button>
+    </div> -->
+    <div class="logo">jobRinger<span class="tagline">India's Job Portal</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="active.html">Active Employers</a></li>
+                <li><a href="">Job Blogs</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="login.html" class="login">Jobseeker Login</a></li>
+                <li><a href="singup.html" class="login employer">Employer Login</a></li>
+            </ul>
+        </nav>
+  </div>
+
+  <!-- Alert -->
+  <div class="alert">
+    Shailendra Gangwar applied on the Job.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <!-- Blog Cards -->
+    <div class="blogs">
+      <div class="blog-card">
+        <img src="hjpf5dd6f74d65df7235c9ac9899a117ba3.png" alt="Career Change" />
+        <div class="blog-card-content">
+          <div class="blog-title">Navigating A Career Change In Your 30s, 40s, Or Beyond</div>
+          <div class="blog-meta">Divya Solanki <br>20+ day(s) ago</div>
+          <div class="share">
+            Share:
+            <a href="#">🌐</a>
+            <a href="#">🐦</a>
+            <a href="#">💼</a>
+            <a href="#">📨</a>
+            <a href="#">🔗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="2ndpic.png" alt="Layoff Interview" />
+        <div class="blog-card-content">
+          <div class="blog-title">How To Explain A Layoff In Job Interviews Without Losing Confidence ?</div>
+          <div class="blog-meta">Prakash Bansal <br>20+ day(s) ago</div>
+          <div class="share">
+            Share:
+            <a href="#">🌐</a>
+            <a href="#">🐦</a>
+            <a href="#">💼</a>
+            <a href="#">📨</a>
+            <a href="#">🔗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-box">
+        <h4>Quick Job search <span class="search-icon">🔍</span></h4>
+        <div class="tags">
+          <div class="tag">#Fresher</div>
+          <div class="tag">#Work From Home</div>
+          <div class="tag">#WFH</div>
+          <div class="tag">#IT</div>
+          <div class="tag">#HR</div>
+          <div class="tag">#Back Office</div>
+          <div class="tag">#BPO Jobs</div>
+          <div class="tag">#ITES</div>
+          <div class="tag">#Finance</div>
+          <div class="tag">#Accounts</div>
+          <div class="tag">#Medical</div>
+          <div class="tag">#Pharma</div>
+          <div class="tag">#Manager</div>
+          <div class="tag">#Developer</div>
+          <div class="tag">#CA</div>
+          <div class="tag">#Marketing</div>
+          <div class="tag">#Engineering</div>
+          <div class="tag">#Research</div>
+          <div class="tag">#Sales</div>
+          <div class="tag">#MBA</div>
+          <div class="tag">#Non Government Jobs</div>
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <h4>popular Keywords</h4>
+        <div class="tags">
+          <div class="tag">All blogs</div>
+          <div class="tag">Job</div>
+          <div class="tag">Salary</div>
+          <div class="tag">Fresher</div>
+          <div class="tag">Job Portal</div>
+          <div class="tag">internship</div>
+          <div class="tag">IT</div>
+          <div class="tag">Engineering</div>
+          <div class="tag">Pharma</div>
+          <div class="tag">Medical</div>
+          <div class="tag">job</div>
+          <div class="tag">resume</div>
+          <div class="tag">cv</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<footer style="background-color: #e6f9f7; padding: 40px 20px; font-family: Arial, sans-serif;">
+  <div style="text-align: center;">
+    <h2 style="margin-bottom: 10px;">JOBS IN INDIA</h2>
+    <p>
+      #Mumbai #Delhi #Ajmer #Pune #Hyderabad #Agra #Chennai #Kolkata #Indore #Gurugram #Jaipur #Ahmedabad
+    </p>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <h2>INTERNATIONAL JOBS</h2>
+    <p>
+      #Africa #USA #UK #Australia #Canada #Singapore #Dubai #Saudi Arabia #New Zealand
+    </p>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center;">
+    <div>
+      <p><strong>Jobs Posted</strong></p>
+      <h2 style="color: #2d2f96;">41148</h2>
+    </div>
+    <div>
+      <p><strong>Jobs Filled</strong></p>
+      <h2 style="color: #2d2f96;">15153</h2>
+    </div>
+    <div>
+      <p><strong>Employers</strong></p>
+      <h2 style="color: #2d2f96;">25784</h2>
+    </div>
+    <div>
+      <p><strong>Active Users</strong></p>
+      <h2 style="color: #2d2f96;">1586582</h2>
+    </div>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="max-width: 1000px; margin: 0 auto; font-size: 14px; line-height: 1.6;">
+    <p><strong>Disclaimer:</strong> All Trademarks and Logos are the property of their respective owners, depicted here purely for representation purpose. Jobringer.com has taken all reasonable steps to ensure that information on this site is genuine. Job Applicants are advised to evaluate independently. Jobringer.com shall not have any responsibility in this regard. All Jobseeker services are strictly designed & meant only for job search assistance and to maximize the chances for the jobseekers to get their dream job. All Job Seeker Credentials and Employment Opportunities are subject to individual merit & evaluation. We do not guarantee any job to any jobseeker.</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p><strong>Follow us on</strong></p>
+    <div style="font-size: 20px;">
+      <!-- Replace # with your actual URLs -->
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-whatsapp"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-facebook"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-twitter"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-instagram"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-linkedin"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p><strong>Recognized By</strong></p>
+    <h3 style="color: orange;">#startupindia</h3>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="text-align: center; font-size: 13px;">
+    <p>
+      <a href="#">Terms and conditions</a> |
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Refund / Cancellation Policy</a> |
+      <a href="#">About Us</a> |
+      <a href="#">Contact Us</a> |
+      <a href="#">FAQ</a> |
+      <a href="#">Blogs</a>
+    </p>
+    <p>© All Rights Reserved @ 2025. Jobtech Ventures Private Limited</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerHub - Find Your Dream Job Today</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="nav.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="contact.css"> -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #333;
+            border: 2px solid #667eea;
+        }
+
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            gap: 1rem;
+            align-items: end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-group input, .form-group select {
+            padding: 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-card i {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Job Section */
+        .jobs-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .job-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e1e5e9;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+        }
+
+        .job-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .job-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-left-color: #667eea;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-name {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .job-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .job-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time-posted {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+                .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .filters {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-title {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .filter-btn.active {
+            background: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .jobs-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .job-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: none;
+        }
+
+        .job-card.show {
+            display: block;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .company-name {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .job-meta i {
+            color: #667eea;
+        }
+
+        .time-posted {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .job-skills {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #e8f4f8, #d1ecf1);
+            color: #2c5aa0;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #b8daff;
+        }
+
+        .job-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .job-actions > div:first-child {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #28a745;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .job-actions > div:last-child {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .employment-type {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .no-jobs {
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 50px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                justify-content: center;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .job-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .job-actions {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+            
+            .job-actions > div:last-child {
+                justify-content: center;
+            }
+        }
+        .footer {
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Cancel out any centered parent */
+  background-color: #e6f9f7;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+  
+
+       
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+    <header>
+        <div class="logo">jobRinger<span class="tagline">India's Job Portal</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="active.html">Active Employers</a></li>
+                <li><a href="bloging.html">Job Blogs</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="login.html" class="login">Jobseeker Login</a></li>
+                <li><a href="singup.html" class="login employer">Employer Login</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+    <div class="notification">Nasreen Shaikh got selected for a Job!</div>
+</body>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Find Your Dream Career</h1>
+                <p>Discover thousands of job opportunities from top companies worldwide</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="search-section">
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="keywords">Keywords</label>
+                        <input type="text" id="keywords" placeholder="Job title, skills, company...">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="City, state, or remote">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category">
+                            <option value="">All Categories</option>
+                            <option value="tech">Technology</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="finance">Finance</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="education">Education</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary pulse">
+                        <i class="fas fa-search"></i> Search Jobs
+                    </button>
+                </form>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>25,000+</h3>
+                    <p>Active Jobs</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-building"></i>
+                    <h3>5,000+</h3>
+                    <p>Companies</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>1M+</h3>
+                    <p>Job Seekers</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>50,000+</h3>
+                    <p>Success Stories</p>
+                </div>
+            </div>
+
+            <!-- <div class="jobs-section" id="jobs">
+                <div class="section-header">
+                    <h2>Latest Job Openings</h2>
+                    <a href="#" class="btn btn-outline">View All Jobs</a>
+                </div>
+                
+
+                <div class="job-filters">
+                    <button class="filter-btn active">All Jobs</button>
+                    <button class="filter-btn">Full Time</button>
+                    <button class="filter-btn">Part Time</button>
+                    <button class="filter-btn">Remote</button>
+                    <button class="filter-btn">Contract</button>
+                    <button class="filter-btn">Internship</button>
+                </div>
+                <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-briefcase"></i> Job Search Platform</h1>
+            <p>Find your perfect career opportunity</p>
+        </div> -->
+
+        <div class="filters">
+            <div class="filter-title"><i class="fas fa-filter"></i> Filter by Employment Type</div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-type="all">All Jobs</button>
+                <button class="filter-btn" data-type="full-time">Full Time</button>
+                <button class="filter-btn" data-type="part-time">Part Time</button>
+                <button class="filter-btn" data-type="remote">Remote</button>
+                <button class="filter-btn" data-type="internship">Internship</button>
+            </div>
+        </div>
+
+        <div class="jobs-grid" id="jobsGrid">
+            <!-- Full Time Job -->
+            <div class="job-card show" data-employment="full-time">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Executive Chef</div>
+                        <div class="company-name">Gourmet Hotels</div>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
+                            <span><i class="fas fa-clock"></i> Full Time</span>
+                            <span><i class="fas fa-rupee-sign"></i> ₹5-10 LPA</span>
+                        </div>
+                    </div>
+                    <div class="time-posted">55 min ago</div>
+                </div>
+                <div class="job-skills">
+                    <span class="skill-tag">Menu Development</span>
+                    <span class="skill-tag">Kitchen Management</span>
+                    <span class="skill-tag">Food & Beverages</span>
+                    <span class="skill-tag">Quality Assurance</span>
+                </div>
+                <div class="job-actions">
+                    <div>
+                        <i class="fas fa-universal-access"></i> Open to all
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-heart"></i> Save
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part Time Job -->
+            <div class="job-card" data-employment="part-time">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Content Writer</div>
+                        <div class="company-name">Digital Marketing Pro</div>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
+                            <span><i class="fas fa-clock"></i> Part Time</span>
+                            <span><i class="fas fa-rupee-sign"></i> ₹2-4 LPA</span>
+                        </div>
+                    </div>
+                    <div class="time-posted">2 hours ago</div>
+                </div>
+                <div class="job-skills">
+                    <span class="skill-tag">Content Writing</span>
+                    <span class="skill-tag">SEO</span>
+                    <span class="skill-tag">Social Media</span>
+                    <span class="skill-tag">Creative Writing</span>
+                </div>
+                <div class="job-actions">
+                    <div>
+                        <i class="fas fa-universal-access"></i> Open to all
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-heart"></i> Save
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remote Job -->
+            <div class="job-card" data-employment="remote">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Full Stack Developer</div>
+                        <div class="company-name">Tech Solutions Inc</div>
+                        <div class="job-meta">
+                            <span><i class="fas fa-globe"></i> Remote</span>
+                            <span><i class="fas fa-clock"></i> Full Time</span>
+                            <span><i class="fas fa-rupee-sign"></i> ₹8-15 LPA</span>
+                        </div>
+                    </div>
+                    <div class="time-posted">4 hours ago</div>
+                </div>
+                <div class="job-skills">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+                <div class="job-actions">
+                    <div>
+                        <i class="fas fa-universal-access"></i> Open to all
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-heart"></i> Save
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internship -->
+            <div class="job-card" data-employment="internship">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Marketing Intern</div>
+                        <div class="company-name">StartUp Ventures</div>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
+                            <span><i class="fas fa-clock"></i> Internship</span>
+                            <span><i class="fas fa-rupee-sign"></i> ₹10,000-20,000/month</span>
+                        </div>
+                    </div>
+                    <div class="time-posted">1 day ago</div>
+                </div>
+                <div class="job-skills">
+                    <span class="skill-tag">Digital Marketing</span>
+                    <span class="skill-tag">Analytics</span>
+                    <span class="skill-tag">Campaign Management</span>
+                    <span class="skill-tag">Communication</span>
+                </div>
+                <div class="job-actions">
+                    <div>
+                        <i class="fas fa-graduation-cap"></i> Students welcome
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-heart"></i> Save
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Another Full Time Job -->
+            <div class="job-card" data-employment="full-time">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Senior UI/UX Designer</div>
+                        <div class="company-name">Creative Studios</div>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
+                            <span><i class="fas fa-clock"></i> Full Time</span>
+                            <span><i class="fas fa-rupee-sign"></i> ₹6-12 LPA</span>
+                        </div>
+                    </div>
+                    <div class="time-posted">3 hours ago</div>
+                </div>
+                <div class="job-skills">
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Adobe XD</span>
+                    <span class="skill-tag">Prototyping</span>
+                    <span class="skill-tag">User Research</span>
+                </div>
+                <div class="job-actions">
+                    <div>
+                        <i class="fas fa-universal-access"></i> Open to all
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-heart"></i> Save
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Another Remote Job -->
+            <div class="job-card" data-employment="remote">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Data Analyst</div>
+                        <div class="company-name">Analytics Corp</div>
+                        <div class="job-meta">
+                            <span><i class="fas fa-globe"></i> Remote</span>
+                            <span><i class="fas fa-clock"></i> Full Time</span>
+                            <span><i class="fas fa-rupee-sign"></i> ₹5-9 LPA</span>
+                        </div>
+                    </div>
+                    <div class="time-posted">6 hours ago</div>
+                </div>
+                <div class="job-skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Statistics</span>
+                </div>
+                <div class="job-actions">
+                    <div>
+                        <i class="fas fa-universal-access"></i> Open to all
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-heart"></i> Save
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-jobs" id="noJobs">
+            <i class="fas fa-search"></i>
+            <p>No jobs found for the selected filter.</p>
+        </div>
+    </div>
+
+                <div class="job-grid">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Senior iOS Developer</div>
+                                <div class="company-name">TechCorp Solutions</div>
+                                <div class="job-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
+                                    <span><i class="fas fa-clock"></i> Full Time</span>
+                                    <span><i class="fas fa-rupee-sign"></i> ₹8-15 LPA</span>
+                                </div>
+                            </div>
+                            <div class="time-posted">15 min ago</div>
+                        </div>
+                        <div class="job-skills">
+                            <span class="skill-tag">iOS</span>
+                            <span class="skill-tag">Swift</span>
+                            <span class="skill-tag">Mobile Apps</span>
+                            <span class="skill-tag">XML</span>
+                            <span class="skill-tag">JSON</span>
+                        </div>
+                        <div class="job-actions">
+                            <div>
+                                <i class="fas fa-universal-access"></i> Open to all
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline btn-small">
+                                    <i class="fas fa-heart"></i> Save
+                                </a>
+                                <a href="#" class="btn btn-primary btn-small">
+                                    <i class="fas fa-paper-plane"></i> Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Business Development Manager</div>
+                                <div class="company-name">GrowthMax Industries</div>
+                                <div class="job-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Delhi, India</span>
+                                    <span><i class="fas fa-clock"></i> Full Time</span>
+                                    <span><i class="fas fa-rupee-sign"></i> ₹10-18 LPA</span>
+                                </div>
+                            </div>
+                            <div class="time-posted">20 min ago</div>
+                        </div>
+                        <div class="job-skills">
+                            <span class="skill-tag">B2B Sales</span>
+                            <span class="skill-tag">Client Acquisition</span>
+                            <span class="skill-tag">Strategic Planning</span>
+                            <span class="skill-tag">Growth Strategy</span>
+                        </div>
+                        <div class="job-actions">
+                            <div>
+                                <i class="fas fa-universal-access"></i> Inclusive hiring
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline btn-small">
+                                    <i class="fas fa-heart"></i> Save
+                                </a>
+                                <a href="#" class="btn btn-primary btn-small">
+                                    <i class="fas fa-paper-plane"></i> Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Digital Marketing Specialist</div>
+                                <div class="company-name">MarketPro Agency</div>
+                                <div class="job-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Bangalore, India</span>
+                                    <span><i class="fas fa-clock"></i> Remote</span>
+                                    <span><i class="fas fa-rupee-sign"></i> ₹6-12 LPA</span>
+                                </div>
+                            </div>
+                            <div class="time-posted">53 min ago</div>
+                        </div>
+                        <div class="job-skills">
+                            <span class="skill-tag">SEO</span>
+                            <span class="skill-tag">PPC</span>
+                            <span class="skill-tag">Google Ads</span>
+                            <span class="skill-tag">Social Media</span>
+                            <span class="skill-tag">Content Marketing</span>
+                        </div>
+                        <div class="job-actions">
+                            <div>
+                                <i class="fas fa-universal-access"></i> Open to all
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline btn-small">
+                                    <i class="fas fa-heart"></i> Save
+                                </a>
+                                <a href="#" class="btn btn-primary btn-small">
+                                    <i class="fas fa-paper-plane"></i> Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Executive Chef</div>
+                                <div class="company-name">Gourmet Hotels</div>
+                                <div class="job-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
+                                    <span><i class="fas fa-clock"></i> Full Time</span>
+                                    <span><i class="fas fa-rupee-sign"></i> ₹5-10 LPA</span>
+                                </div>
+                            </div>
+                            <div class="time-posted">55 min ago</div>
+                        </div>
+                        <div class="job-skills">
+                            <span class="skill-tag">Menu Development</span>
+                            <span class="skill-tag">Kitchen Management</span>
+                            <span class="skill-tag">Food & Beverages</span>
+                            <span class="skill-tag">Quality Assurance</span>
+                        </div>
+                        <div class="job-actions">
+                            <div>
+                                <i class="fas fa-universal-access"></i> Open to all
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline btn-small">
+                                    <i class="fas fa-heart"></i> Save
+                                </a>
+                                <a href="#" class="btn btn-primary btn-small">
+                                    <i class="fas fa-paper-plane"></i> Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Data Engineer</div>
+                                <div class="company-name">DataTech Solutions</div>
+                                <div class="job-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Pune, India</span>
+                                    <span><i class="fas fa-clock"></i> Full Time</span>
+                                    <span><i class="fas fa-rupee-sign"></i> ₹12-20 LPA</span>
+                                </div>
+                            </div>
+                            <div class="time-posted">49 min ago</div>
+                        </div>
+                        <div class="job-skills">
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Spark</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Big Data</span>
+                        </div>
+                        <div class="job-actions">
+                            <div>
+                                <i class="fas fa-universal-access"></i> Open to all
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline btn-small">
+                                    <i class="fas fa-heart"></i> Save
+                                </a>
+                                <a href="#" class="btn btn-primary btn-small">
+                                    <i class="fas fa-paper-plane"></i> Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">QA Automation Engineer</div>
+                                <div class="company-name">TestPro Systems</div>
+                                <div class="job-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Chennai, India</span>
+                                    <span><i class="fas fa-clock"></i> Full Time</span>
+                                    <span><i class="fas fa-rupee-sign"></i> ₹7-14 LPA</span>
+                                </div>
+                            </div>
+                            <div class="time-posted">1 hour ago</div>
+                        </div>
+                        <div class="job-skills">
+                            <span class="skill-tag">Automation Testing</span>
+                            <span class="skill-tag">.NET Framework</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">RestClient</span>
+                        </div>
+                        <div class="job-actions">
+                            <div>
+                                <i class="fas fa-universal-access"></i> Open to all
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline btn-small">
+                                    <i class="fas fa-heart"></i> Save
+                                </a>
+                                <a href="#" class="btn btn-primary btn-small">
+                                    <i class="fas fa-paper-plane"></i> Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="features" id="services">
+                <div class="container">
+                    <h2 style=" -->
+<!-- <footer>
+        <div class="floating-elements">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">CareerHub</div>
+                    <p class="footer-description">
+                        Connecting talented professionals with leading companies worldwide. Your dream career is just a click away.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>For Job Seekers</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Browse Jobs</a></li>
+                        <li><a href="#">Create Profile</a></li>
+                        <li><a href="#">Upload Resume</a></li>
+                        <li><a href="#">Job Alerts</a></li>
+                        <li><a href="#">Salary Guide</a></li>
+                        <li><a href="#">Career Advice</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>For Employers</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Post Jobs</a></li>
+                        <li><a href="#">Search Resumes</a></li>
+                        <li><a href="#">Recruitment Solutions</a></li>
+                        <li><a href="#">Employer Branding</a></li>
+                        <li><a href="#">Pricing Plans</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press & Media</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <div class="newsletter">
+                        <h4>Stay Updated</h4>
+                        <p>Get the latest job opportunities delivered to your inbox.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">
+                                <i class="fas fa-bell"></i> Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    <p>&copy; 2025 CareerHub. All rights reserved. Built with ❤️ for job seekers worldwide.</p>
+                </div>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer> -->
+
+<div class="footer">
+        <footer style="background-color: #e6f9f7; padding: 40px 20px; font-family: Arial, sans-serif;">
+  <div style="text-align: center;">
+    <h2 style="margin-bottom: 10px;">JOBS IN INDIA</h2>
+    <p>
+      #Mumbai #Delhi #Ajmer #Pune #Hyderabad #Agra #Chennai #Kolkata #Indore #Gurugram #Jaipur #Ahmedabad
+    </p>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <h2>INTERNATIONAL JOBS</h2>
+    <p>
+      #Africa #USA #UK #Australia #Canada #Singapore #Dubai #Saudi Arabia #New Zealand
+    </p>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center;">
+    <div>
+      <p><strong>Jobs Posted</strong></p>
+      <h2 style="color: #2d2f96;">41148</h2>
+    </div>
+    <div>
+      <p><strong>Jobs Filled</strong></p>
+      <h2 style="color: #2d2f96;">15153</h2>
+    </div>
+    <div>
+      <p><strong>Employers</strong></p>
+      <h2 style="color: #2d2f96;">25784</h2>
+    </div>
+    <div>
+      <p><strong>Active Users</strong></p>
+      <h2 style="color: #2d2f96;">1586582</h2>
+    </div>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="max-width: 1000px; margin: 0 auto; font-size: 14px; line-height: 1.6;">
+    <p><strong>Disclaimer:</strong> All Trademarks and Logos are the property of their respective owners, depicted here purely for representation purpose. Jobringer.com has taken all reasonable steps to ensure that information on this site is genuine. Job Applicants are advised to evaluate independently. Jobringer.com shall not have any responsibility in this regard. All Jobseeker services are strictly designed & meant only for job search assistance and to maximize the chances for the jobseekers to get their dream job. All Job Seeker Credentials and Employment Opportunities are subject to individual merit & evaluation. We do not guarantee any job to any jobseeker.</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p><strong>Follow us on</strong></p>
+    <div style="font-size: 20px;">
+      <!-- Replace # with your actual URLs -->
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-whatsapp"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-facebook"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-twitter"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-instagram"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-linkedin"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p><strong>Recognized By</strong></p>
+    <h3 style="color: orange;">#startupindia</h3>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="text-align: center; font-size: 13px;">
+    <p>
+      <a href="#">Terms and conditions</a> |
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Refund / Cancellation Policy</a> |
+      <a href="#">About Us</a> |
+      <a href="#">Contact Us</a> |
+      <a href="#">FAQ</a> |
+      <a href="#">Blogs</a>
+    </p>
+    <p>© All Rights Reserved @ 2025. Jobtech Ventures Private Limited</p>
+  </div>
+</footer>
+</div>
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const jobCards = document.querySelectorAll('.job-card');
+        const noJobsMessage = document.getElementById('noJobs');
+
+        function filterJobs(type) {
+            let visibleJobs = 0;
+            
+            jobCards.forEach(card => {
+                if (type === 'all' || card.dataset.employment === type) {
+                    card.classList.add('show');
+                    visibleJobs++;
+                } else {
+                    card.classList.remove('show');
+                }
+            });
+            
+            // Show/hide no jobs message
+            if (visibleJobs === 0) {
+                noJobsMessage.style.display = 'block';
+            } else {
+                noJobsMessage.style.display = 'none';
+            }
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Filter jobs
+                const filterType = button.dataset.type;
+                filterJobs(filterType);
+            });
+        });
+
+        // Add click handlers for Apply Now buttons
+        document.querySelectorAll('.btn-primary').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const jobTitle = e.target.closest('.job-card').querySelector('.job-title').textContent;
+                alert(`Application submitted for: ${jobTitle}\n\nYou will be redirected to the application form.`);
+            });
+        });
+
+        // Add click handlers for Save buttons
+        document.querySelectorAll('.btn-outline').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const jobTitle = e.target.closest('.job-card').querySelector('.job-title').textContent;
+                const icon = button.querySelector('i');
+                
+                if (icon.classList.contains('fas')) {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    button.style.background = 'transparent';
+                    alert(`${jobTitle} removed from saved jobs`);
+                } else {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    button.style.background = '#667eea';
+                    button.style.color = 'white';
+                    alert(`${jobTitle} saved to your profile`);
+                }
+            });
+        });
+
+        // Initialize with all jobs shown
+        filterJobs('all');
+    </script>
+</body>
+</html>

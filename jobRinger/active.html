@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Active Employers on Jobringer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f7f7f7;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header .logo {
+      font-weight: bold;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .header nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .header .login-buttons button {
+      margin-left: 10px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .jobseeker {
+      background-color: white;
+    }
+
+    .employer {
+      background-color: #ffc107;
+    }
+
+    .banner {
+      background: linear-gradient(to right, #00c9ff, #0049b1);
+      color: white;
+      padding: 20px 40px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      padding: 15px 40px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .filters span {
+      margin-right: 20px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .filters a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #0056b3;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 30px 40px;
+      background: white;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px dashed #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #5a2da4;
+      font-weight: 600;
+    }
+
+    .verified {
+      color: #5a2da4;
+      margin-left: 5px;
+    }
+
+    .jobs-count {
+      background: #00c9ff;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <!-- <div class="logo">jobRinger <span style="color:#0056b3">››</span></div>
+    <nav>
+      <a href="index.html">Jobs</a>
+      <a href="active.html">Active Employers</a>
+      <a href="bloging.html">Job Blogs</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+    <div class="login-buttons">
+      <button class="jobseeker">Jobseeker Login</button>
+      <button class="employer">Employer Login</button>
+    </div> -->
+    <div class="logo">jobRinger<span class="tagline">India's Job Portal</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="active.html">Active Employers</a></li>
+                <li><a href="bloging.html">Job Blogs</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="login.html" class="login">Jobseeker Login</a></li>
+                <li><a href="singup.html" class="login employer">Employer Login</a></li>
+            </ul>
+        </nav>
+  </div>
+
+  <div class="banner">
+    Active Employers on Jobringer
+  </div>
+
+  <div class="filters">
+    <span>List By:</span>
+    <a href="#" style="color:yellow">Active Jobs</a>
+    <a href="#">Recent</a>
+    <a href="#">A</a><a href="#">B</a><a href="#">C</a><a href="#">D</a><a href="#">E</a><a href="#">F</a>
+    <a href="#">G</a><a href="#">H</a><a href="#">I</a><a href="#">J</a><a href="#">K</a><a href="#">L</a>
+    <a href="#">M</a><a href="#">N</a><a href="#">O</a><a href="#">P</a><a href="#">Q</a><a href="#">R</a>
+    <a href="#">S</a><a href="#">T</a><a href="#">U</a><a href="#">V</a><a href="#">W</a><a href="#">X</a>
+    <a href="#">Y</a><a href="#">Z</a><a href="#">Others</a>
+  </div>
+
+  <div class="grid">
+    <div class="card"><a href="#">HINDCO Consulting Services</a><span class="verified">✔️</span><span class="jobs-count">1961 Jobs</span></div>
+    <div class="card"><a href="#">Nestem Technologies</a><span class="verified">✔️</span><span class="jobs-count">120 Jobs</span></div>
+    <div class="card"><a href="#">jobringer.com</a><span class="verified">✔️</span><span class="jobs-count">74 Jobs</span></div>
+    <div class="card"><a href="#">HRC MANPOWER</a><span class="verified">✔️</span><span class="jobs-count">28 Jobs</span></div>
+
+    <!-- Add more cards as needed... -->
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+
+    <!-- More companies can be added here similarly -->
+     
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+    <div class="card"><a href="#">Quectel</a><span class="jobs-count">21 Jobs</span></div>
+    <div class="card"><a href="#">Estuate, Inc.</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Brandshark</a><span class="jobs-count">16 Jobs</span></div>
+    <div class="card"><a href="#">Dexian</a><span class="jobs-count">15 Jobs</span></div>
+  </div>
+<footer style="background-color: #e6f9f7; padding: 40px 20px; font-family: Arial, sans-serif;">
+  <div style="text-align: center;">
+    <h2 style="margin-bottom: 10px;">JOBS IN INDIA</h2>
+    <p>
+      #Mumbai #Delhi #Ajmer #Pune #Hyderabad #Agra #Chennai #Kolkata #Indore #Gurugram #Jaipur #Ahmedabad
+    </p>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <h2>INTERNATIONAL JOBS</h2>
+    <p>
+      #Africa #USA #UK #Australia #Canada #Singapore #Dubai #Saudi Arabia #New Zealand
+    </p>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center;">
+    <div>
+      <p><strong>Jobs Posted</strong></p>
+      <h2 style="color: #2d2f96;">41148</h2>
+    </div>
+    <div>
+      <p><strong>Jobs Filled</strong></p>
+      <h2 style="color: #2d2f96;">15153</h2>
+    </div>
+    <div>
+      <p><strong>Employers</strong></p>
+      <h2 style="color: #2d2f96;">25784</h2>
+    </div>
+    <div>
+      <p><strong>Active Users</strong></p>
+      <h2 style="color: #2d2f96;">1586582</h2>
+    </div>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="max-width: 1000px; margin: 0 auto; font-size: 14px; line-height: 1.6;">
+    <p><strong>Disclaimer:</strong> All Trademarks and Logos are the property of their respective owners, depicted here purely for representation purpose. Jobringer.com has taken all reasonable steps to ensure that information on this site is genuine. Job Applicants are advised to evaluate independently. Jobringer.com shall not have any responsibility in this regard. All Jobseeker services are strictly designed & meant only for job search assistance and to maximize the chances for the jobseekers to get their dream job. All Job Seeker Credentials and Employment Opportunities are subject to individual merit & evaluation. We do not guarantee any job to any jobseeker.</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p><strong>Follow us on</strong></p>
+    <div style="font-size: 20px;">
+      <!-- Replace # with your actual URLs -->
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-whatsapp"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-facebook"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-twitter"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-instagram"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-linkedin"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p><strong>Recognized By</strong></p>
+    <h3 style="color: orange;">#startupindia</h3>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="text-align: center; font-size: 13px;">
+    <p>
+      <a href="#">Terms and conditions</a> |
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Refund / Cancellation Policy</a> |
+      <a href="#">About Us</a> |
+      <a href="#">Contact Us</a> |
+      <a href="#">FAQ</a> |
+      <a href="#">Blogs</a>
+    </p>
+    <p>© All Rights Reserved @ 2025. Jobtech Ventures Private Limited</p>
+  </div>
+</footer>
+
+</body>
+</html>

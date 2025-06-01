@@ -1,0 +1,100 @@
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    background-color: #a1a7ad;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+main {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 80vh;
+}
+
+.login-signup {
+    background: #ffcc00;
+    padding: 20px;
+    /* border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.login-signup h2 {
+    margin-bottom: 20px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    /* border: 1px solid #ccc;
+    border-radius: 4px; */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #8cefc9;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.job-stats p {
+    margin: 5px 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dfd7eb;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: blue;
+}
+
+.tagline {
+    font-size: 12px;
+    color: black;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+.container img {
+  max-width: 100%;
+  height: auto;
+}

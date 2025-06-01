@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JobRinger Employer Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0d47a1, #00bcd4);
+    }
+
+    .top-bar {
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 18px;
+    }
+
+    .top-bar span {
+      color: #ffc107;
+      font-weight: bold;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding: 40px 20px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .features-box,
+    .login-box {
+      border-radius: 12px;
+      padding: 25px;
+      background-color: #e6f1f9;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .features-box {
+      width: 600px;
+      max-width: 100%;
+    }
+
+    .features-box h2 {
+      color: #ff5722;
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .feature-col {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .feature-col p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #004d99;
+    }
+
+    .feature-col p::before {
+      content: "✔️";
+      margin-right: 8px;
+      color: #00c853;
+    }
+
+    .login-box {
+      background-color: white;
+      width: 320px;
+      max-width: 100%;
+    }
+
+    .login-box h3 {
+      margin-bottom: 10px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .tabs span {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .tabs .active {
+      border-bottom: 2px solid orange;
+      color: #000;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-box button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #ffc107;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-box .enquiry {
+      margin-top: 15px;
+      text-align: right;
+    }
+
+    .login-box .enquiry a {
+      text-decoration: none;
+      color: #0077cc;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    Register & Start Hiring for Free in just <span>5 minutes</span> &nbsp;&nbsp;&nbsp;
+    <span>REGISTRATION ➤ JOB POSTING ➤ APPLICANT RESPONSE</span>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    
+    <!-- Features Section -->
+    <div class="features-box">
+      <h2>India's only Job Portal designed exclusively for Employers.</h2>
+      <div class="feature-list">
+        <div class="feature-col">
+          <p>Unique Jobseekers</p>
+          <p>Immediate Joiners</p>
+          <p>Database All Ind. Sectors</p>
+        </div>
+        <div class="feature-col">
+          <p>Lifetime Free Job Posting</p>
+          <p>Easy to Use</p>
+          <p>No Fixed Cost</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Box -->
+    <div class="login-box">
+      <div class="tabs">
+        <span class="active">Login</span>
+        <span>Register</span>
+      </div>
+      <h3>Employer Login</h3>
+      <label for="email">Business Email ID</label>
+      <input type="email" id="email" placeholder="Enter email">
+      <button>Proceed</button>
+      <div class="enquiry">
+        <a href="#">Sales Enquiry</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

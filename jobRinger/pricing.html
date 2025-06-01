@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jobseeker Subscription Plans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header .logo {
+      font-weight: bold;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .header nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .header .buttons button {
+      margin-left: 10px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .jobseeker {
+      background-color: white;
+    }
+
+    .employer {
+      background-color: #ffc107;
+    }
+
+    .banner {
+      background: linear-gradient(to right, #00c9ff, #0049b1);
+      color: white;
+      padding: 25px 40px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .plan-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 20px;
+      gap: 20px;
+    }
+
+    .plan {
+      background: white;
+      border: 1px solid #ddd;
+      border-top: 5px solid #007bff;
+      border-radius: 8px;
+      width: 270px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .plan h3 {
+      font-size: 16px;
+      font-weight: 600;
+      background: linear-gradient(to right, #008cdd, #00c9ff);
+      color: white;
+      padding: 10px;
+      margin: -20px -20px 15px -20px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      text-align: center;
+    }
+
+    .price {
+      font-size: 22px;
+      color: #2c3e50;
+      font-weight: bold;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .duration {
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .plan ul {
+      list-style: none;
+      font-size: 14px;
+      color: #444;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .plan ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .plan ul li::before {
+      content: "ℹ️";
+      position: absolute;
+      left: 0;
+    }
+
+    .plan ul li.star::before {
+      content: "⭐";
+    }
+
+    .plan ul li.bell::before {
+      content: "🔔";
+    }
+
+    .btn-add {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 0;
+      text-align: center;
+      display: block;
+      width: 100%;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .highlight {
+      color: #0056b3;
+      font-weight: 600;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">jobRinger <span style="color:#0056b3">››</span></div>
+    <!-- <nav>
+      <a href="index.html">Jobs</a>
+      <a href="active.html">Active Employers</a>
+      <a href="bloging.html">Job Blogs</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+    <div class="buttons">
+      <button class="employer">Jobseeker Login</button>
+      <button class="employer">Employer Login</button>
+    </div> -->
+    <div class="logo">jobRinger<span class="tagline">India's Job Portal</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="active.html">Active Employers</a></li>
+                <li><a href="">Job Blogs</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="login.html" class="login">Jobseeker Login</a></li>
+                <li><a href="singup.html" class="login employer">Employer Login</a></li>
+            </ul>
+        </nav>
+  </div>
+
+  <div class="banner">
+    JOBSEEKER SUBSCRIPTION PLAN<br>
+    <small style="font-size: 14px; font-weight: normal;">To increase the chances of getting your Dream JOB, just subscribe to any of our popular plans.</small>
+  </div>
+
+  <div class="plan-container">
+    <!-- JobRings Plan -->
+    <div class="plan">
+      <h3>JOBRINGS - APPLY CREDITS</h3>
+      <div class="price">₹ 10</div>
+      <div class="duration">10 JobRings for ₹10</div>
+      <ul>
+        <li><span class="highlight">1 JobRing just for ₹1.</span></li>
+        <li>Apply on "Exclusive Job Vacancies" which are not available on any other platforms just for ₹1 per apply.</li>
+        <li>These apply credits are valid for Lifetime.</li>
+        <li>JobRings / 10</li>
+      </ul>
+      <button class="btn-add">+ Add ons</button>
+    </div>
+
+    <!-- Featured Resume -->
+    <div class="plan">
+      <h3>FEATURED RESUME</h3>
+      <div class="price">₹ 50</div>
+      <div class="duration">Featured Resume - 10 days</div>
+      <ul>
+        <li>5 times more visibility to recruiters.</li>
+        <li>Featured Resume stand out your candidature and reduces your competition with other jobseekers.</li>
+        <li>Increase in number of Interview Calls.</li>
+        <li>Featured Resume / 10 days</li>
+      </ul>
+      <button class="btn-add">+ Add ons</button>
+    </div>
+
+    <!-- Star Applicant -->
+    <div class="plan">
+      <h3>STAR APPLICANT</h3>
+      <div class="price">₹ 50</div>
+      <div class="duration">Star Applicant - 10 days</div>
+      <ul>
+        <li class="star">When you apply for a job, your application stands out from other jobseekers, it will be tagged as 'Star Applicant'.</li>
+        <li class="star">Captures Recruiter attention.</li>
+        <li class="star">Enhances the number of interview calls.</li>
+        <li class="star">Star applicant / 10 days</li>
+      </ul>
+      <button class="btn-add">+ Add ons</button>
+    </div>
+
+    <!-- Jobping -->
+    <div class="plan">
+      <h3>JOBPING</h3>
+      <div class="price">₹ 100.00</div>
+      <div class="duration">Jobping - 10 days</div>
+      <ul>
+        <li class="bell">Jobseeker will get an SMS for any new recommended jobs or jobs as per job alert; and status change on his application (Prospect, Shortlisted, Rejected, etc.)</li>
+        <li class="bell">It helps jobseeker to have real time updates and never miss out on suitable job opportunities</li>
+        <li class="bell">Jobping / 10 days</li>
+      </ul>
+      <button class="btn-add">+ Add ons</button>
+    </div>
+  </div>
+<footer style="background-color: #e6f9f7; padding: 40px 20px; font-family: Arial, sans-serif;">
+  <div style="text-align: center;">
+    <h2 style="margin-bottom: 10px;">JOBS IN INDIA</h2>
+    <p>
+      #Mumbai #Delhi #Ajmer #Pune #Hyderabad #Agra #Chennai #Kolkata #Indore #Gurugram #Jaipur #Ahmedabad
+    </p>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <h2>INTERNATIONAL JOBS</h2>
+    <p>
+      #Africa #USA #UK #Australia #Canada #Singapore #Dubai #Saudi Arabia #New Zealand
+    </p>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center;">
+    <div>
+      <p><strong>Jobs Posted</strong></p>
+      <h2 style="color: #2d2f96;">41148</h2>
+    </div>
+    <div>
+      <p><strong>Jobs Filled</strong></p>
+      <h2 style="color: #2d2f96;">15153</h2>
+    </div>
+    <div>
+      <p><strong>Employers</strong></p>
+      <h2 style="color: #2d2f96;">25784</h2>
+    </div>
+    <div>
+      <p><strong>Active Users</strong></p>
+      <h2 style="color: #2d2f96;">1586582</h2>
+    </div>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="max-width: 1000px; margin: 0 auto; font-size: 14px; line-height: 1.6;">
+    <p><strong>Disclaimer:</strong> All Trademarks and Logos are the property of their respective owners, depicted here purely for representation purpose. Jobringer.com has taken all reasonable steps to ensure that information on this site is genuine. Job Applicants are advised to evaluate independently. Jobringer.com shall not have any responsibility in this regard. All Jobseeker services are strictly designed & meant only for job search assistance and to maximize the chances for the jobseekers to get their dream job. All Job Seeker Credentials and Employment Opportunities are subject to individual merit & evaluation. We do not guarantee any job to any jobseeker.</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p><strong>Follow us on</strong></p>
+    <div style="font-size: 20px;">
+      <!-- Replace # with your actual URLs -->
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-whatsapp"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-facebook"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-twitter"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-instagram"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-linkedin"></i></a>
+      <a href="#" style="margin: 0 10px;"><i class="fa fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p><strong>Recognized By</strong></p>
+    <h3 style="color: orange;">#startupindia</h3>
+  </div>
+
+  <hr style="margin: 30px 0; border: 1px solid #ccc;">
+
+  <div style="text-align: center; font-size: 13px;">
+    <p>
+      <a href="#">Terms and conditions</a> |
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Refund / Cancellation Policy</a> |
+      <a href="#">About Us</a> |
+      <a href="#">Contact Us</a> |
+      <a href="#">FAQ</a> |
+      <a href="#">Blogs</a>
+    </p>
+    <p>© All Rights Reserved @ 2025. Jobtech Ventures Private Limited</p>
+  </div>
+</footer>
+
+</body>
+</html>
